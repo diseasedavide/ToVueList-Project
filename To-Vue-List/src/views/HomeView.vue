@@ -62,8 +62,8 @@ export default {
     <h1 class="text-center text-3xl text-[#34495d] pt-10 mb-10">To-<span class="text-[#00b36b]">Vue</span> List</h1>
     <div class="bg-[#34495d] text-[#00b36b] rounded-3xl mx-[600px] min-h-80 py-[30px] border-4 border-[#1c2731]">
       <div class="flex justify-center gap-3">
-        <input class="border border-[#00b36b] rounded-lg bg-[#34495d] text-white" type="text" v-model="nuovoItem"
-          @keyup.enter="aggiungiItem" placeholder="  Nuovo elemento..">
+        <input class="border border-[#00b36b] rounded-lg bg-[#34495d] text-white pl-2" type="text" v-model="nuovoItem"
+          @keyup.enter="aggiungiItem" placeholder="Nuovo elemento..">
         <button @click="aggiungiItem">Aggiungi alla lista</button>
       </div>
       <div class="px-[40px] mt-5">
@@ -82,7 +82,7 @@ export default {
         <button @click="eliminaLista" class="">Elimina la lista</button>
       </div>
       <div v-show="voidInput" class="flex justify-center items-center mt-10">
-        <p class="p-5 text-red-600 bg-red-300 text-[18px] rounded-xl">Non hai inserito un valore</p>
+        <p class="p-5 text-red-600 bg-red-300 text-[18px] rounded-xl">Non hai inserito nulla!</p>
       </div>
     </div>
   </main>
