@@ -3,7 +3,8 @@ export default {
   data() {
     return {
       nuovoItem: "",
-      lista: []
+      lista: [],
+      show: true
     }
   },
   methods: {
@@ -31,7 +32,20 @@ export default {
     },
     eliminaLista() {
       this.lista = []
+    },
+    isEmpty() {
+      if (this.lista.length == 0) {
+        this.show = false
+      } else if (this.lista.length >= 1) {
+        this.show = true
+      }
     }
+  },
+  mounted() {
+    this.isEmpty()
+  },
+  updated() {
+    this.isEmpty()
   }
 }
 </script>
@@ -57,7 +71,7 @@ export default {
           </li>
         </ul>
       </div>
-      <div class="flex justify-center items-center mt-4">
+      <div class="flex justify-center items-center mt-4" v-show="show">
         <button @click="eliminaLista" class="">Elimina la lista</button>
       </div>
     </div>
