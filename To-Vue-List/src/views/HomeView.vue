@@ -4,7 +4,8 @@ export default {
     return {
       nuovoItem: "",
       lista: [],
-      show: true
+      show: true,
+      voidInput: false
     }
   },
   methods: {
@@ -15,7 +16,7 @@ export default {
         console.log(this.lista);
         this.nuovoItem = "";
       } else {
-        alert("non hai aggiunto nulla")
+        this.voidText()
       }
     },
     rimuoviItem(indice) {
@@ -27,7 +28,7 @@ export default {
       if (edit.trim() !== "") {
         this.lista[indice] = edit.toUpperCase()
       } else {
-        alert("Non hai inserito un valore")
+        this.voidText()
       }
     },
     eliminaLista() {
@@ -39,6 +40,12 @@ export default {
       } else if (this.lista.length >= 1) {
         this.show = true
       }
+    },
+    voidText() {
+      this.voidInput = !this.voidInput
+      setTimeout(() => {
+        this.voidInput = !this.voidInput
+      }, 2000);
     }
   },
   mounted() {
@@ -73,6 +80,9 @@ export default {
       </div>
       <div class="flex justify-center items-center mt-4" v-show="show">
         <button @click="eliminaLista" class="">Elimina la lista</button>
+      </div>
+      <div v-show="voidInput" class="flex justify-center items-center mt-10">
+        <p class="p-5 text-red-600 bg-red-300 text-[18px] rounded-xl">Non hai inserito un valore</p>
       </div>
     </div>
   </main>
