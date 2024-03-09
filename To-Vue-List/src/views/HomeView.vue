@@ -58,9 +58,9 @@ export default {
 </script>
 
 <template>
-  <main>
-    <h1 class="text-center text-3xl text-[#34495d] my-10">To-<span class="text-[#00b36b]">Vue</span> List</h1>
-    <div class="bg-[#34495d] text-[#00b36b] rounded-3xl mx-[600px] min-h-80 py-[30px]">
+  <main class="bg-[#F9FBE7] h-screen w-full">
+    <h1 class="text-center text-3xl text-[#34495d] pt-10 mb-10">To-<span class="text-[#00b36b]">Vue</span> List</h1>
+    <div class="bg-[#34495d] text-[#00b36b] rounded-3xl mx-[600px] min-h-80 py-[30px] border-4 border-[#1c2731]">
       <div class="flex justify-center gap-3">
         <input class="border border-[#00b36b] rounded-lg bg-[#34495d] text-white" type="text" v-model="nuovoItem"
           @keyup.enter="aggiungiItem" placeholder="  Nuovo elemento..">
